@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+   <!-- <group android:checkableBehavior="single">-->
+<!--
+    <item
+        android:id="@+id/nav_add_vehicle"
+        android:icon="@drawable/ic_add_vehicle_alt_black_24dp"
+        android:title="Add Vehicle" />
+-->
+
+    <item
+        android:id="@+id/grp_agreement"
+        android:title="Rental Agreement">
+        <menu>
+        <item
+            android:id="@+id/nav_ra_checkout"
+            android:icon="@drawable/ic_check_out_alt_black_24dp"
+            android:title="Check-Out" />
+        <item
+            android:id="@+id/nav_ra_checkin"
+            android:icon="@drawable/ic_check_in_alt_black_24dp"
+            android:title="Check-In" />
+
+        </menu>
+    </item>
+
+    <item
+        android:visible="false"
+        android:id="@+id/nav_replacement"
+        android:icon="@drawable/ic_swap_horiz_black_24dp"
+        android:title="Replacement" />
+
+    <item
+        android:id="@+id/nav_syncstatus"
+        android:icon="@drawable/ic_sync_black_24dp"
+        android:title="Sync Status" />
+    <item
+        android:id="@+id/grp_staff_movement"
+        android:title="Staff Movement">
+        <menu>
+            <item
+                android:visible="true"
+                android:id="@+id/nav_nrm_checkout"
+                android:icon="@drawable/ic_check_out_alt_black_24dp"
+                android:title="Check-Out" />
+            <item
+                android:id="@+id/nav_nrm_checkin"
+           android:icon="@drawable/ic_check_in_alt_black_24dp"
+           android:title="Check-In" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/grp_garage"
+        android:title="Workshop Movements">
+        <menu>
+
+            <item
+                android:id="@+id/garage_out"
+                android:icon="@drawable/ic_check_out_alt_black_24dp"
+                android:title="Check-Out" />
+            <item
+                android:id="@+id/garage_in"
+                android:icon="@drawable/ic_check_in_alt_black_24dp"
+                android:title="Check-In" />
+        </menu>
+    </item>
+
+    <!-- <group android:id="@+id/inspection" android:checkableBehavior="none">
+     <item
+         android:id="@+id/nav_inspect"
+         android:icon="@drawable/ic_car_inspectiont_alt_black_24dp"
+         android:title="Inspection (Damages)" />
+      <item
+          android:id="@+id/nav_walkthroughinspect"
+          android:icon="@drawable/ic_inspection_alt_black_24dp"
+          android:title="Inspection (Walkthrough)"/>
+     </group>-->
+
+    <group android:id="@+id/general" android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="Settings" />
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_power_settings_new_black_24dp"
+        android:title="Logout" />
+    </group>
+
+
+
+</menu>

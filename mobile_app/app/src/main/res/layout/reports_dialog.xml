@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10dp"
+    android:paddingLeft="25dp"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:longClickable="false"
+    >
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/info"
+        android:text="For reports and other features please visit our Web App in mobile browser or best viewed in PC browser."
+        android:textIsSelectable="true"
+        android:textSize="16sp"
+        />
+     <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/company_code"
+         android:text="Company Code:"
+         android:textIsSelectable="true"
+         android:lineSpacingMultiplier="1.5"
+         android:textSize="16sp"
+        />
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:text="Email:"
+        android:textIsSelectable="true"
+        android:textSize="16sp"
+        android:visibility="gone"
+        />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pass"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/link"
+        android:autoLink="web"
+        android:text="URL: http://app.speedautosystems.com"
+        android:textSize="16sp"
+        />
+
+</LinearLayout>

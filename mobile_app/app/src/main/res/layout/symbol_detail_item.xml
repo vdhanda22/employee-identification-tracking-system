@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:background="@android:color/black"
+    >
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        />
+    <com.karzansoft.fastvmi.extended.ScaleImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_centerInParent="true"
+        android:id="@+id/imageView">
+
+    </com.karzansoft.fastvmi.extended.ScaleImageView>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/info_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#50000000"
+        android:paddingTop="5dp"
+        android:visibility="gone"
+
+        >
+
+        <EditText
+            android:id="@+id/edtDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Detail"
+
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:minHeight="40dp"
+            android:textColor="@android:color/white"
+            android:maxLines="3"
+            android:textColorHint="@android:color/white"
+
+            android:singleLine="false" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/camera_img"
+        android:visibility="invisible"
+        android:src="@drawable/camera_button"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+
+        />
+
+
+
+
+</RelativeLayout>

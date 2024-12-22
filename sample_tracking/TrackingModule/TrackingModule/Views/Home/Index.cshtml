@@ -1,0 +1,27 @@
+﻿@model IEnumerable<TrackingModule.Models.Map>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Select a Map</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MapFile)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MapFile)
+            </td>
+            <td>
+                @Html.ActionLink("LiveMap", "LiveMap", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

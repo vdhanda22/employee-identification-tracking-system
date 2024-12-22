@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="80dp"
+    android:gravity="left|center_vertical"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:id="@+id/footer"
+       >
+      <android.support.v7.widget.AppCompatTextView
+          android:visibility="gone"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/tax"
+          android:text="Tax (% Inclusive): "
+          android:textSize="15sp"
+          android:layout_alignParentLeft="true"
+          android:layout_marginTop="20dp"
+          android:maxLines="1"
+          />
+   <android.support.v7.widget.AppCompatTextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/total"
+       android:text="Total amount: "
+       android:textSize="15sp"
+       android:layout_alignParentLeft="true"
+      android:layout_marginTop="10dp"
+       android:maxLines="1"
+       />
+
+   </LinearLayout>
+   <TextView
+       android:padding="10dp"
+       android:id="@+id/add_row"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Add Row"
+       android:textColor="@color/colorAccent"
+       android:textSize="16sp"
+       android:layout_alignParentRight="true"
+       android:layout_below="@+id/footer"
+       android:layout_marginRight="5dp"
+
+       />
+</RelativeLayout>
+</LinearLayout>

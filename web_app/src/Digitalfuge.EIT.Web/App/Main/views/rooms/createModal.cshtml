@@ -1,0 +1,68 @@
+﻿<form id="frm_create_user" name="userCreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("CreateNewRoom")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <uib-tabset class="tab-container tabbable-line">
+            <uib-tab heading="Room Details">
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="name" type="text" name="Name" ng-model="vm.room.name" required maxlength="32" class="validate form-control">
+                                <label for="name" class="form-label">@L("Name")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <select class="form-control" type="text" name="currency"
+                                        ng-class="{'edited':vm.room.mapId}"
+                                        ng-options="map.id as map.name for map in vm.maps"
+                                        ng-model="vm.room.mapId" required>                          
+                                </select>
+                                <label for="surname" class="form-label">@L("Maps")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-6">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="positionX" type="text" name="PositionX" ng-model="vm.room.positionX" class="validate form-control">
+                                <label for="positionX" class="form-label">@L("PositionX")</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="positionY" type="text" name="PositionY" ng-model="vm.room.positionY" required maxlength="32" class="validate form-control">
+                                <label for="positionY" class="form-label">@L("PositionY")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>            
+        </uib-tabset>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="userCreateForm.$invalid">
+            @L("Save")
+        </button>
+    </div>
+
+</form>

@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "angular-file-upload@2.6.1",
+      "destination": "lib/angular-file-upload/"
+    },
+    {
+      "library": "angular-ui-grid@4.10.1",
+      "destination": "lib/angular-ui-grid/"
+    },
+    {
+      "library": "bootstrap-daterangepicker@3.0.5",
+      "destination": "lib/bootstrap-daterangepicker/"
+    },
+    {
+      "library": "zingchart-angularjs@1.2.1",
+      "destination": "lib/zingchart-angularjs/"
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "zingchart@2.9.4",
+      "destination": "lib/zingchart/"
+    }
+  ]
+}

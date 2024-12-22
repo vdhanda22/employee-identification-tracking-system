@@ -1,0 +1,8 @@
+./output/Shahmeer_Abid\Shahmeer_Abid0001.png 601 92 720 233
+./output/Shahmeer_Abid\Shahmeer_Abid0002.png 580 94 689 234
+./output/Shahmeer_Abid\Shahmeer_Abid0003.png 519 106 677 302
+./output/Umer_Naeem\Umer_Naeem0001.png 1003 353 1155 548
+./output/Umer_Naeem\Umer_Naeem0002.png 277 190 431 386
+./output/Umer_Naeem\Umer_Naeem0003.png 849 1085 869 1116
+./output/Umer_Naeem\Umer_Naeem0004.png 366 321 772 872
+./output/Umer_Naeem\Umer_Naeem0005.png 475 344 794 767

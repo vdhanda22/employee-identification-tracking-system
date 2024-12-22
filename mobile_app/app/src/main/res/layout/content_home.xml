@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_margin"
+        android:weightSum="5">
+
+        <!--
+
+                &lt;!&ndash; Add Vehicle &ndash;&gt;
+            <RelativeLayout
+                android:layout_weight="0.9"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="0dp"
+                android:background="@drawable/vehicle_section_bg"
+                android:visibility="invisible"
+                >
+                <LinearLayout
+                    android:id="@+id/add_vehicle"
+                    android:padding="@dimen/activity_margin"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:gravity="center_horizontal"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.4"
+                        android:src="@drawable/ic_car_alt_white_24dp"
+                        android:scaleType="fitCenter"
+                        />
+                    <TextView
+                        android:id="@+id/txt_add_vehicle"
+                        android:gravity="center_horizontal|bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.6"
+                        android:text="Add vehicle"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_13sdp"
+                        />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        -->
+
+        <!-- Rental Agreement -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/activity_center_margin"
+                android:layout_marginRight="@dimen/activity_center_margin"
+                android:layout_weight="1"
+                android:background="@drawable/agreement_out_bg">
+
+                <LinearLayout
+                    android:id="@+id/checkout_vehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/activity_margin"
+                    android:paddingBottom="@dimen/activity_margin"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.4"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_agree_check_out_alt_white_24dp" />
+
+                    <TextView
+                        android:id="@+id/txt_agreement_checkout"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal|bottom"
+                        android:maxLines="1"
+                        android:text="Agreement Check-Out"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_13sdp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/activity_center_margin"
+                android:layout_marginLeft="@dimen/activity_center_margin"
+                android:layout_weight="1"
+                android:background="@drawable/agreement_in_bg">
+
+                <LinearLayout
+                    android:id="@+id/checkin_vehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/activity_margin"
+                    android:paddingBottom="@dimen/activity_margin"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.4"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_agree_check_in_alt_white_24dp" />
+
+                    <TextView
+                        android:id="@+id/txt_agreement_checkin"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal|bottom"
+                        android:maxLines="1"
+                        android:text="Agreement Check-In"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_13sdp" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <!-- Staff Movement -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/activity_center_margin"
+                android:layout_marginRight="@dimen/activity_center_margin"
+                android:layout_weight="1"
+                android:background="@drawable/staff_out_bg">
+
+                <LinearLayout
+                    android:id="@+id/checkout_vehicle_staff"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/activity_margin"
+                    android:paddingBottom="@dimen/activity_margin"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.4"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_agree_check_out_alt_white_24dp" />
+
+                    <TextView
+                        android:id="@+id/txt_staff_checkout"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal|bottom"
+                        android:maxLines="1"
+                        android:text="Staff Check-Out"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_13sdp" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/activity_center_margin"
+                android:layout_marginLeft="@dimen/activity_center_margin"
+                android:layout_weight="1"
+                android:background="@drawable/staff_in_bg">
+
+                <LinearLayout
+                    android:id="@+id/checkin_vehicle_staff"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/activity_margin"
+                    android:paddingBottom="@dimen/activity_margin"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.4"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_agree_check_in_alt_white_24dp" />
+
+                    <TextView
+                        android:id="@+id/txt_staff_checkin"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal|bottom"
+                        android:maxLines="1"
+                        android:text="Staff Check-In"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_13sdp" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <!-- Workshop Movement -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/activity_center_margin"
+                android:layout_marginRight="@dimen/activity_center_margin"
+                android:layout_weight="1"
+                android:background="@drawable/workshop_out_bg">
+
+                <LinearLayout
+                    android:id="@+id/checkout_vehicle_workshop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/activity_margin"
+                    android:paddingBottom="@dimen/activity_margin"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.35"
+                        android:paddingBottom="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_shop_check_out_alt_white_24dp" />
+
+                    <TextView
+                        android:id="@+id/txt_workshop_out"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.65"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal|bottom"
+                        android:maxLines="1"
+                        android:text="Workshop Check-Out"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/activity_center_margin"
+                android:layout_marginLeft="@dimen/activity_center_margin"
+                android:layout_weight="1"
+                android:background="@drawable/workshop_in_bg">
+
+                <LinearLayout
+                    android:id="@+id/checkin_vehicle_workshop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/activity_margin"
+                    android:paddingBottom="@dimen/activity_margin"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.35"
+                        android:paddingBottom="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_shop_check_in_alt_white_24dp" />
+
+                    <TextView
+                        android:id="@+id/txt_workshop_in"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.65"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal|bottom"
+                        android:maxLines="1"
+                        android:text="Workshop Check-In"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <!--
+
+                &lt;!&ndash; Report &ndash;&gt;
+                <LinearLayout
+                    android:layout_marginTop="@dimen/activity_margin"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="0dp"
+                    android:weightSum="2"
+                    >
+                    <RelativeLayout
+                        android:layout_marginRight="@dimen/activity_center_margin"
+                        android:layout_marginEnd="@dimen/activity_center_margin"
+                        android:background="@drawable/home_report_bg"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:visibility="invisible">
+                        <LinearLayout
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:id="@+id/txt_reports"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingBottom="@dimen/activity_margin"
+                            android:paddingTop="@dimen/activity_margin"
+                            android:weightSum="2"
+                            >
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1.4"
+                                android:src="@drawable/ic_report_alt_white_24dp"
+                                android:scaleType="fitCenter"
+                                />
+                            <TextView
+                                android:id="@+id/txt_report"
+                                android:gravity="center_horizontal|bottom"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="0.6"
+                                android:text="Report  "
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_13sdp"
+                                />
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_marginLeft="@dimen/activity_center_margin"
+                        android:layout_marginStart="@dimen/activity_center_margin"
+                        android:background="@drawable/home_howto_bg"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:visibility="invisible"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:id="@+id/txt_howtous"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingBottom="@dimen/activity_margin"
+                            android:paddingTop="@dimen/activity_margin"
+                            android:weightSum="2"
+                            >
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1.4"
+                                android:src="@drawable/ic_how_to_alt_white_24dp"
+                                android:scaleType="fitCenter"
+                                />
+                            <TextView
+                                android:id="@+id/txt_howto"
+                                android:gravity="center_horizontal|bottom"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="0.6"
+                                android:text="How to use"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_13sdp"
+                                />
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+        -->
+
+    </LinearLayout>
+
+
+    <!-- Contact Us -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/txt_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:text="@string/support_email"
+            android:textColor="@color/colorPrimary"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="@dimen/_13sdp" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/phone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:autoLink="email"
+            android:gravity="center"
+            android:text="info@speedautosystems.com"
+            android:textColor="@color/colorPrimary"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="@dimen/_13sdp" />
+
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txt_version"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:autoLink="phone"
+            android:text="+1 888-446-7102"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="@dimen/_13sdp" />
+
+        <TextView
+            android:id="@+id/txt_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="Version "
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/_10sdp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

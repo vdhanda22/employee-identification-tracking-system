@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="en">
+  <texts>
+    <text name="HomePage" value="Home page" />
+    <text name="About" value="About" />
+    <text name="WellcomeMessage" value="Welcome to EIT!" />
+    
+    <text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
+    <text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />
+
+    <text name="InvalidUserNameOrPassword" value="Invalid user name or password" />
+    <text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
+    <text name="TenantIsNotActive" value="Tenant {0} is not active." />
+    <text name="UserIsNotActiveAndCanNotLogin" value="User {0} is not active and can not log in." />
+    <text name="UserEmailIsNotConfirmedAndCanNotLogin">Your email address is not confirmed. You can not login</text>
+    <text name="UserLockedOutMessage">The user account has been locked out. Please try again later.</text>
+    <text name="PleaseEnterLoginInformation" value="Please enter login information" />
+    <text name="TenancyName" value="Tenancy name" />
+    <text name="UserNameOrEmail" value="User name or email" />
+    <text name="Password" value="Password" />
+    <text name="RememberMe" value="Remember me" />
+    <text name="LogIn" value="Log in" />
+
+    <text name="LoginFailed" value="Login failed!" />
+
+    <text name="NameSurname" value="Name surname" />
+    <text name="UserName" value="User name" />
+    <text name="Name" value="Name" />
+    <text name="Surname" value="Surname" />
+    <text name="EmailAddress" value="Email address" />
+
+    <text name="Tenants" value="Tenants" />
+    <text name="SavedSuccessfully" value="Saved successfully" />
+    <text name="CreateNewTenant" value="Create new tenant" />
+    <text name="AdminEmailAddress" value="Admin email address" />
+    <text name="Save" value="Save" />
+    <text name="Cancel" value="Cancel" />
+    <text name="TenantName_Regex_Description" value="Tenant name must be at least 2 chars, starts with a letter and continue with letter, number, dash or underscore." />
+    <text name="DefaultPasswordIs" value="Default password is {0}" />
+    <text name="CanBeEmptyToLoginAsHost" value="Can be empty to login as host." />
+    <text name="Register" value="Register" />
+    <text name="OrLoginWith" value="Or login with" />
+    <text name="WaitingForActivationMessage" value="Your account is waiting to be activated by system admin." />
+    <text name="TenantSelection" value="Tenant Selection" />
+    <text name="TenantSelection_Detail" value="Please select one of the following tenants." />
+    <text name="Logout" value="Logout" />
+
+    <text name="RegisterFormUserNameInvalidMessage">Please dont enter an email address for username.</text>
+
+    <text name="DatabaseConnectionString" value="Database connection string" />
+    <text name="Users" value="Users" />
+    <text name="IsActive" value="Is active" />
+    <text name="FullName" value="Full name" />
+    <text name="CreateNewUser" value="Create new user" />
+    <text name="Yes" value="Yes" />
+    <text name="No" value="No" />
+    <text name="Optional" value="Optional" />
+    <text name="LeaveEmptyToSwitchToHost">Leave empty to switch to the host</text>
+
+    <text name="CurrentTenant">Current tenant</text>
+    <text name="NotSelected">Not selected</text>
+    <text name="Change">Change</text>
+    <text name="ChangeTenant">Change tenant</text>
+
+    <text name="MultiLevelMenu">Multi Level Menu</text>
+    <text name="Back">Back</text>
+    <text name="SuccessfullyRegistered">Successfully registered</text>
+    <text name="WaitingForEmailActivation">Your email address should be activated</text>
+    <text name="Roles">Roles</text>
+
+    <text name="Actions">Actions</text>
+    <text name="RoleName">Role Name</text>
+    <text name="DisplayName">Display Name</text>
+    <text name="CreateNewRole">Create New Role</text>
+    <text name="EditRole">Edit Role</text>
+    <text name="EditUser">Edit User</text>
+    <text name="Edit">Edit</text>
+    <text name="Delete">Delete</text>
+    
+     <!--Custom Translations-->
+    <text name="Employees">Employees</text>
+    <text name="CreateNewEmployee">Create new Employee</text>
+    <text name="EditEmployee">Edit Employee</text>
+    <text name="DateOfBirth">Date Of Birth</text>
+    <text name="AddressLane1">Address Lane 1</text>
+    <text name="AddressLane2">Address Lane 2</text>
+    <text name="City">City</text>
+    <text name="State">State</text>
+    <text name="Country">Country</text>
+    <text name="Image">Image</text>
+    <text name="IsTrained">Trained</text>
+    <text name="Retrain">Retrain</text>
+
+    <text name="Rooms">Rooms</text>
+    <text name="Tags">Tags</text>
+    <text name="CreateNewTag">Create new Tag</text>
+    <text name="Address">Address</text>
+    <text name="Color">Color</text>
+    <text name="EditTag">Edit Tag</text>
+    <text name="Tag">Tag</text>
+    <text name="Maps">Maps</text>
+    <text name="CreateNewMap">Create New Map</text>
+    <text name="EditMap">Edit Map</text>
+    <text name="PositionX">Position X</text>
+    <text name="PositionY">Position Y</text>
+    <text name="CreateNewRoom">Create New Room</text>
+    <text name="EditRoom">Edit Room</text>
+    <text name="Refresh">Refresh</text>
+    <text name="Cameras">Cameras</text>
+    <text name="Rfids">RFID Sensors</text>
+    <text name="CreateNewCamera">Create New Camera</text>
+    <text name="IsRunning">Running</text>
+    <text name="Url">Url</text>
+    <text name="CreateNewRfid">Create New Rfid</text>
+    <text name="EditRfid">Edit Rfid</text>
+    <text name="Trackings">Tracking</text>
+    <text name="Movements">Movements</text>
+    <text name="Id">Id</text>
+    <text name="Employee">Employee</text>
+    <text name="Room">Room</text>
+    <text name="ReportedOn">ReportedOn</text>
+    <text name="Locations">Locations</text>
+    <text name="Movement">Movement</text>
+  </texts>
+</localizationDictionary>

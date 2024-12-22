@@ -1,0 +1,90 @@
+﻿@using System.Web.Optimization
+@Scripts.Render("~/Bundles/home-index")
+<div ng-controller="app.views.home as vm">
+
+    <div class="block-header">
+        <h2>ANALYTICAL DASHBOARD</h2>
+    </div>
+
+
+    <!-- Widgets -->
+    <div class="row clearfix">
+        <div ng-if="vm.users" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-pink hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">person_add</i>
+                </div>
+                <div class="content">
+                    <div class="text">USERS</div>
+                    <div class="number count-to" data-from="0" data-to="{{vm.users}}" data-speed="1000" data-fresh-interval="20">{{vm.users}}</div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="vm.rfids" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-cyan hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">radio</i>
+                </div>
+                <div class="content">
+                    <div class="text">RFID</div>
+                    <div class="number count-to" data-from="0" data-to="{{vm.rfids}}" data-speed="1000" data-fresh-interval="20">{{vm.rfids}}</div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="vm.rooms" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-light-green hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">hotel</i>
+                </div>
+                <div class="content">
+                    <div class="text">ROOMS</div>
+                    <div class="number count-to" data-from="0" data-to="{{vm.rooms}}" data-speed="1000" data-fresh-interval="20">{{vm.rooms}}</div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="vm.cameras" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-orange hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">videocam</i>
+                </div>
+                <div class="content">
+                    <div class="text">CAMERAS</div>
+                    <div class="number count-to" data-from="0" data-to="{{vm.cameras}}" data-speed="1000" data-fresh-interval="20">{{vm.cameras}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Widgets -->
+    <!-- CPU Usage -->
+    <div class="row clearfix">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="card">
+                <div class="header">
+                    <div class="row clearfix">
+                        <div class="col-xs-12 col-sm-6">
+                            <h2>Analytics</h2>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Date Range</label>
+                            <input ng-disabled="!vm.filters.enableDateRange" date-range-picker ng-model="vm.dateRangeModel" ng-keypress="vm.enterKeyPress($event)" ng-change="vm.dateRangeModelChange()" type="text" options="vm.dateRangeOptions" min="vm.dateRangeOptions.min" max="vm.dateRangeOptions.max" class="form-control date-picker" />
+                        </div>
+                        <div class="col-md-2">
+                            <label>Enable Date Filter</label>
+                            <div class="md-checkbox has-success" style="width: 20px; height: 20px;">
+                                <input id="disableDateRange" class="md-check" style="width: 15px; height: 15px" type="checkbox" name="disableDateRange" ng-model="vm.filters.enableDateRange" ng-change="vm.dateRangeCheck()">
+                                <label for="disableDateRange">
+                                    <span class="inc"></span>
+                                    <span class="check"></span>
+                                    <span class="box" style="width: 20px; height: 20px"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="body" ng-if="vm.showTable">
+                    <div zingchart id="chart-1" zc-json="myJson" zc-width="100%" zc-height="568px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

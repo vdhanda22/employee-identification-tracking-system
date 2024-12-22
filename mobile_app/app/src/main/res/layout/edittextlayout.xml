@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/question_margin">
+
+    <EditText
+        android:id="@+id/edittextvalue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/activity_horizontal_margin" />
+
+    <TextView
+        android:id="@+id/edittextquestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. hello how are you  what are you doing i hope you are fine.?"
+        android:textSize="@dimen/text_size_questions" />
+</LinearLayout>

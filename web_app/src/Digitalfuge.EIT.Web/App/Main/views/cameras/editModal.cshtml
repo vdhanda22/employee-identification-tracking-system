@@ -1,0 +1,59 @@
+﻿<form id="frm_edit_user" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.close()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("EditRoom")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <uib-tabset class="tab-container tabbable-line">
+            <uib-tab heading="Camera Details">
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="name" type="text" name="Name" ng-model="vm.camera.name" required maxlength="32" class="validate form-control">
+                                <label for="name" class="form-label">@L("Name")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <select class="form-control" type="text" name="currency"
+                                        ng-class="{'edited':vm.camera.roomId}"
+                                        ng-options="room.id as room.name for room in vm.rooms"
+                                        ng-model="vm.camera.roomId" required>
+                                </select>
+                                <label for="surname" class="form-label">@L("Rooms")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-6">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="url" type="text" name="Url" ng-model="vm.camera.url" class="validate form-control">
+                                <label for="url" class="form-label">@L("Url")</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="userCreateForm.$invalid">
+            @L("Save")
+        </button>
+    </div>
+</form>

@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/header_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="50dp"
+    >
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="Title"
+        android:textSize="@dimen/title_text_size_medium"
+        android:layout_toLeftOf="@+id/checkbox1"
+        android:layout_margin="0dp"
+        android:textIsSelectable="false" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkbox1"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/checkbox2"
+        android:layout_marginRight="10dp"
+
+        android:background="?android:attr/listChoiceIndicatorMultiple"
+        android:theme="@style/MyCheckBox"
+
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkbox2"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:background="?android:attr/listChoiceIndicatorMultiple"
+
+
+        />
+
+</RelativeLayout>

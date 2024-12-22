@@ -1,0 +1,85 @@
+﻿<style>
+    .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+        background-color: #eef1f5;
+        opacity: 1;
+    }
+</style>
+<div class="row clearfix" ng-controller="app.views.movements.index as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header">
+                <h2>
+                    @L("Movements")
+                </h2>
+                <form class="form-horizontal">
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);" class="waves-effect waves-block()" ng-click="vm.refresh();"><i class="material-icons">refresh</i> @L("Refresh")</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div class="body">
+                <div busy-if="vm.loading">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="form-label">Date Range</label>
+                            <input   ng-disabled="!vm.filters.enableDateRange" date-range-picker ng-model="vm.dateRangeModel" ng-keypress="vm.enterKeyPress($event)" ng-change="vm.dateRangeModelChange()" type="text" options="vm.dateRangeOptions" min="vm.dateRangeOptions.min" max="vm.dateRangeOptions.max" class="form-control date-picker" />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Movement Type</label>
+                            <select class="form-control" type="text" name="currency"
+                                    ng-class="{'edited':vm.filters.movementType}"                                  
+                                    ng-change=""
+                                    ng-model="vm.filters.movementType">
+                                <option value="">Select Movement Type</option>
+                                <option value="CHECK_IN">CHECK_IN</option>
+                                <option value="CHECK_OUT">CHECK_OUT</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Employee</label>
+                            <select class="form-control" type="text" name="currency"
+                                    ng-class="{'edited':vm.filters.employeeId}"
+                                    ng-options="employee.id as employee.name for employee in vm.employees"
+                                    ng-change=""
+                                    ng-model="vm.filters.employeeId">
+                                <option value="">Select Employee</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Enable Date Filter</label>
+                            <div class="md-checkbox has-success" style="width: 20px; height: 20px;">
+                                <input id="disableDateRange" class="md-check" style="width: 15px; height: 15px" type="checkbox" name="disableDateRange" ng-model="vm.filters.enableDateRange" ng-change="vm.dateRangeCheck()">
+                                <label for="disableDateRange">
+                                    <span class="inc"></span>
+                                    <span class="check"></span>
+                                    <span class="box" style="width: 20px; height: 20px"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <button ng-click="vm.getLocations()" class="btn btn-primary">Search</button>
+                            <button ng-click="vm.exportToExcel()" class="btn btn-success">Export Excel</button>
+                        </div>
+                    </div>
+                    <div ui-grid="vm.gridOptions" ui-grid-resize-columns ui-grid-pagination></div>
+                    @*<div class="row margin-bottom-10">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <a class="margin-top-10 btn blue" target="_blank" href="" ng-click="vm.openprintModal(vm.printIds)"><i class="fa fa-print"></i> @L("PrintAll") ({{vm.gridOptions.data.length}})</a>
+                                    <a ng-if="vm.isApprovedEnabled && vm.approveAllEnableBotton" class="margin-top-10 btn blue" ng-click="vm.approveAllMethod();"><i class="fa fa-book"></i> @L("ApproveAll") ({{vm.gridOptions.data.length}})</a>
+                                </div>
+                            </div>
+                        </div>*@
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

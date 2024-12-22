@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/booleanViewHolder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/question_margin"
+    android:paddingBottom="@dimen/question_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+        <EditText
+            android:id="@+id/notesvalue"
+            android:layout_width="298dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".90" />
+
+        <TextView
+            android:id="@+id/notes"
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".10"
+            android:text="Notes:"
+            android:textSize="@dimen/text_size_questions" />
+    </LinearLayout>
+
+    <!--    <android.support.v7.widget.AppCompatCheckBox-->
+    <!--        android:id="@+id/remember_me"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:text="Remember me Remember me Remember me Remember me Remember me S"-->
+    <!--        android:gravity="center_vertical|right"-->
+    <!--        android:layoutDirection="rtl"-->
+    <!--        />-->
+</LinearLayout>

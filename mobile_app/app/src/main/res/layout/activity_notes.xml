@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:dividerPadding="@dimen/field_divider_padding"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:focusableInTouchMode="true"
+    android:background="@android:color/white"
+    tools:context=".Activities.VehicleSelectActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+<ScrollView
+    android:layout_below="@+id/appbar"
+    android:layout_marginBottom="50dp"
+    android:layout_width="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="8dp"
+    android:scrollbars="none"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <!--Notes-->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/notes_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/notes"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/ns_prompt_notes"
+                android:inputType="textMultiLine"
+                android:lines="4"
+                android:maxLines="4"
+                android:minLines="4"
+                android:singleLine="false" />
+        </android.support.design.widget.TextInputLayout>
+
+<!--Signature Label-->
+    <LinearLayout
+        android:id="@+id/layout_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_weight="1">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".65"
+            >
+
+            <TextView
+                android:id="@+id/staff_sign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Signatures:" />
+        </android.support.design.widget.TextInputLayout>
+        <Button
+            android:id="@+id/ns_action_clearpaint"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight=".35"
+            android:textAllCaps="false"
+            android:text="Clear"
+            android:textColor="@color/primaryTextColor"
+
+            android:textStyle="bold"
+            />
+
+
+    </LinearLayout>
+
+        <!--Capture Canvas-->
+        <android.support.design.widget.TextInputLayout
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:layout_marginTop="10dp">
+
+            <!--http://stackoverflow.com/questions/7228191/android-signature-capture
+            http://www.mysamplecode.com/2011/11/android-capture-signature-using-canvas.html-->
+            <com.karzansoft.fastvmi.Activities.CaptureSignatureView
+                android:id="@+id/capture"
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@android:drawable/list_selector_background" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>
+    <!--   <LinearLayout
+          android:id="@+id/buttons_parent"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+  android:gravity="bottom"
+          >
+
+
+
+           <Button
+               android:id="@+id/ns_action_print"
+               style="?android:textAppearanceSmall"
+               android:layout_width="0dp"
+               android:layout_height="40dp"
+               android:layout_gravity="bottom"
+               android:layout_marginTop="16dp"
+               android:layout_weight=".5"
+               android:text="Print"
+               android:layout_marginRight="5dp"
+               android:textColor="@color/primaryTextColor"
+               android:background="@color/colorPrimary"
+               android:textStyle="bold" /> -->
+
+
+         <Button
+             android:id="@+id/ns_action_finish"
+             style="?android:textAppearanceSmall"
+             android:layout_width="match_parent"
+             android:layout_marginLeft="32dp"
+             android:layout_marginRight="32dp"
+             android:layout_height="wrap_content"
+             android:minHeight="55dp"
+             android:layout_marginBottom="8dp"
+             android:layout_alignParentBottom="true"
+             android:textColor="@color/primaryTextColor"
+             android:textAllCaps="false"
+             android:text="Finish"
+             android:textStyle="bold" />
+
+
+   <!--  </LinearLayout> -->
+
+ </RelativeLayout>

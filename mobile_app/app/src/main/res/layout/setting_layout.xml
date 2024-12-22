@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:background="@android:color/white"
+   >
+<!--
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:paddingBottom="8dp"
+        android:text="Scanning Document Types"
+        android:gravity="center_vertical"
+        android:textColor="@color/secondaryTextColor"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:visibility="gone"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dividerColor"
+        android:visibility="gone"
+        />
+
+    <RelativeLayout
+        android:id="@+id/container_passid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="64dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:text="Passport "
+            android:gravity="center_vertical"
+            android:textColor="@color/terTextColor"
+            />
+        <CheckBox
+            android:id="@+id/checkbox_passid"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:clickable="false"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/dividerColor"
+        android:visibility="gone"
+        />
+
+    <RelativeLayout
+        android:id="@+id/container_nid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="64dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:visibility="gone"
+        >
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:text="National ID"
+            android:gravity="center_vertical"
+            android:textColor="@color/terTextColor"
+            />
+        <CheckBox
+            android:id="@+id/checkbox_nid"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:clickable="false"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/dividerColor"
+        android:visibility="invisible"
+        />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:minHeight="64dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:id="@+id/layout_language"
+
+        >
+        <TextView
+            android:id="@+id/language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Language"
+            android:gravity="center_vertical"
+            android:textColor="@color/secondaryTextColor"
+            />
+        <TextView
+            android:id="@+id/selected_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:text="English"
+            android:gravity="center_vertical"
+            android:textColor="@color/terTextColor"
+            android:paddingTop="4dp"
+
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/scanning_docs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="21sp"
+        android:paddingBottom="3dp"
+        android:text="About"
+        android:gravity="center_vertical"
+        android:textColor="@color/secondaryTextColor"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        />
+
+    <TextView
+        android:minHeight="60dp"
+        android:id="@+id/version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_centerVertical="true"
+        android:text="Version 1.0.0.1"
+        android:gravity="center_vertical"
+        android:textColor="@color/terTextColor"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        android:visibility="visible"
+        />
+
+    <TextView
+        android:minHeight="60dp"
+        android:id="@+id/legal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_centerVertical="true"
+        android:text="Legal &amp; Privacy"
+        android:gravity="center_vertical"
+        android:textColor="@color/secondaryTextColor"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        android:visibility="visible"
+        />
+    <!--<RelativeLayout
+        android:id="@+id/container_emid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="64dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        >
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:text="Emirates ID"
+            android:gravity="center_vertical"
+            android:textColor="@color/terTextColor"
+            />
+        <CheckBox
+            android:id="@+id/checkbox_emid"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:clickable="false"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/dividerColor"
+        />
+
+    <RelativeLayout
+        android:id="@+id/container_croid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="64dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        >
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:text="Croatian ID"
+            android:gravity="center_vertical"
+            android:textColor="@color/terTextColor"
+            />
+        <CheckBox
+            android:id="@+id/checkbox_croid"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:clickable="false"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/dividerColor"
+        />
+
+
+-->
+
+
+</LinearLayout>

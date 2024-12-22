@@ -1,0 +1,227 @@
+﻿
+@{
+    ViewBag.Title = "LiveMap";
+    Layout = "~/Views/Shared/_LayoutLiveMap.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            @Html.ActionLink("Go Back", "Index")
+        </p>
+
+    </div>
+
+</div>
+<br />
+
+<div class="bodycontent">
+
+
+    <div id="svgmapcontainer" class="svgmapcontainer" style="width: 700px; height: 450px;"></div>  
+    <script type="text/javascript">
+  <!--
+
+        var map_background = "/Content/Maps/fdc6032c-9529-4eab-a1e9-1a6965a397e8.png";
+        var map_background_width = "700";
+        var map_background_height = "450";
+
+        var reader_locations = {
+            16: {
+                "id": 16,
+                "name": "Kitchen",
+                "xpos": 640,
+                "ypos": 260
+            },
+            12: {
+                "id": 12,
+                "name": "Office",
+                "xpos": 480,
+                "ypos": 150
+            },
+            11: {
+                "id": 11,
+                "name": "Office 2",
+                "xpos": 310,
+                "ypos": 140
+            },
+            17: {
+                "id": 17,
+                "name": "Reception",
+                "xpos": 650,
+                "ypos": 410
+            },
+            18: {
+                "id": 18,
+                "name": "Rood",
+                "xpos": 100,
+                "ypos": 100
+            },
+            15: {
+                "id": 15,
+                "name": "Shop Area 1",
+                "xpos": 420,
+                "ypos": 300
+            },
+            14: {
+                "id": 14,
+                "name": "Shop Area 2",
+                "xpos": 130,
+                "ypos": 340
+            },
+            13: {
+                "id": 13,
+                "name": "Staff Lounge",
+                "xpos": 640,
+                "ypos": 160
+            },
+            10: {
+                "id": 10,
+                "name": "Stock Room",
+                "xpos": 130,
+                "ypos": 100
+            }
+        };
+
+        var tags = {
+            3: {
+                "id": 3,
+                "addr": 100000,
+                "name": "Test Tag 1",
+                "colour": "#f06363"
+            },
+            2: {
+                "id": 2,
+                "addr": 200000,
+                "name": "Test Tag 2",
+                "colour": "#88c54c"
+            },
+            4: {
+                "id": 4,
+                "addr": 300000,
+                "name": "Test Tag 3",
+                "colour": "#55aae0"
+            },
+            5: {
+                "id": 5,
+                "addr": 400000,
+                "name": "Test Tag 4",
+                "colour": "#c560f4"
+            },
+            6: {
+                "id": 6,
+                "addr": 500000,
+                "name": "Test Tag 5",
+                "colour": "#ffb85c"
+            }
+        };
+
+        var baseurl = "index.php?p=livemap_ajax&map_id=9";
+
+        var ajaxdata = {
+            "tags": {
+                3: {
+                    "positions": {
+                        0: {
+                            "id": 27,
+                            "xpos": 420,
+                            "ypos": 300
+                        },
+                        1: {
+                            "id": 31,
+                            "xpos": 130,
+                            "ypos": 340
+                        },
+                        2: {
+                            "id": 35,
+                            "xpos": 130,
+                            "ypos": 100
+                        }
+                    }
+                },
+                2: {
+                    "positions": {
+                        0: {
+                            "id": 29,
+                            "xpos": 420,
+                            "ypos": 300
+                        },
+                        1: {
+                            "id": 33,
+                            "xpos": 130,
+                            "ypos": 340
+                        },
+                        2: {
+                            "id": 37,
+                            "xpos": 130,
+                            "ypos": 100
+                        }
+                    }
+                },
+                4: {
+                    "positions": {
+                        0: {
+                            "id": 23,
+                            "xpos": 420,
+                            "ypos": 300
+                        },
+                        1: {
+                            "id": 24,
+                            "xpos": 130,
+                            "ypos": 340
+                        },
+                        2: {
+                            "id": 25,
+                            "xpos": 130,
+                            "ypos": 100
+                        }
+                    }
+                },
+                5: {
+                    "positions": {
+                        0: {
+                            "id": 26,
+                            "xpos": 420,
+                            "ypos": 300
+                        },
+                        1: {
+                            "id": 30,
+                            "xpos": 130,
+                            "ypos": 340
+                        },
+                        2: {
+                            "id": 34,
+                            "xpos": 130,
+                            "ypos": 100
+                        }
+                    }
+                },
+                6: {
+                    "positions": {
+                        0: {
+                            "id": 28,
+                            "xpos": 420,
+                            "ypos": 300
+                        },
+                        1: {
+                            "id": 32,
+                            "xpos": 130,
+                            "ypos": 340
+                        },
+                        2: {
+                            "id": 36,
+                            "xpos": 130,
+                            "ypos": 100
+                        }
+                    }
+                }
+            }
+        };
+
+        var livemap_ajax_refresh_sec = 1
+
+      //-->
+    </script>
+
+
+</div>
+

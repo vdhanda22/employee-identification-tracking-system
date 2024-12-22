@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="visible">0x00000000</integer>
+    <integer name="invisible">0x00000004</integer>
+    <integer name="gone">0x00000008</integer>
+</resources>

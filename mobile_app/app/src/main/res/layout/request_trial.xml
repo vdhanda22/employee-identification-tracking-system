@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:padding="16dp"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameContainer"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name *"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/companyNameContainer"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Company Name *"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/emailContainer"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email Address *"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:singleLine="true"
+
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/countryContainer"
+                >
+
+                <EditText
+                    android:id="@+id/country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Country *"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:drawableEnd="@drawable/arrow_down"
+                    android:drawableRight="@drawable/arrow_down"
+                    android:drawablePadding="5dp"
+                    android:focusable="false"
+                    android:longClickable="false"
+                    android:textIsSelectable="false"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/codeContainer"
+                    android:layout_weight=".22"
+                    >
+
+                    <EditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Code"
+                        android:inputType="phone"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:imeOptions="actionNext"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/phoneContainer"
+                    android:layout_weight=".78"
+                    >
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone Number *"
+                        android:inputType="phone"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:imeOptions="actionNext"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/fleetSizeContainer"
+
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:hint="Fleet Size (Number of Vehicles) *"
+                    android:imeOptions="actionNext"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/messageContainer"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:minLines="4"
+                    android:maxLines="4"
+                    android:hint="Message"
+                    android:padding="8dp"
+                    android:background="@drawable/border_background"
+                    android:imeOptions="actionDone"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/passContainer"
+                    android:layout_weight=".5"
+                    >
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:imeOptions="actionNext"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rePassContainer"
+                    android:layout_weight=".5"
+                    >
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Retype Password"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:imeOptions="actionDone"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_height="wrap_content">
+                <Button
+
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:id="@+id/cancel"
+                    android:visibility="invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primaryTextColor"
+                    android:text="Cancel"/>
+                <Button
+
+                    android:id="@+id/send"
+                    android:textAllCaps="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primaryTextColor"
+                    android:text="Sign up"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:focusable="true"-->
+<!--    android:focusableInTouchMode="true"-->
+<!--    android:orientation="vertical"-->
+<!--    android:padding="16dp">-->
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <android.support.design.widget.TextInputLayout-->
+<!--                android:id="@+id/nameContainer"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:errorTextAppearance="@style/error_appearance">-->
+
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Name *"-->
+<!--                    android:inputType="text"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:singleLine="true" />-->
+
+<!--            </android.support.design.widget.TextInputLayout>-->
+
+
+<!--            <android.support.design.widget.TextInputLayout-->
+<!--                android:id="@+id/companyNameContainer"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:errorTextAppearance="@style/error_appearance">-->
+
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Company Name *"-->
+<!--                    android:inputType="text"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:singleLine="true" />-->
+
+<!--            </android.support.design.widget.TextInputLayout>-->
+
+
+<!--            <android.support.design.widget.TextInputLayout-->
+<!--                android:id="@+id/emailContainer"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:errorTextAppearance="@style/error_appearance">-->
+
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Email Address *"-->
+<!--                    android:inputType="textEmailAddress"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:singleLine="true" />-->
+
+<!--            </android.support.design.widget.TextInputLayout>-->
+
+<!--            <android.support.design.widget.TextInputLayout-->
+<!--                android:id="@+id/countryContainer"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:errorTextAppearance="@style/error_appearance">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/country"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:drawableEnd="@drawable/arrow_down"-->
+<!--                    android:drawableRight="@drawable/arrow_down"-->
+<!--                    android:drawablePadding="5dp"-->
+<!--                    android:focusable="false"-->
+<!--                    android:hint="Country *"-->
+<!--                    android:longClickable="false"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:textIsSelectable="false" />-->
+
+<!--            </android.support.design.widget.TextInputLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:weightSum="1">-->
+
+<!--                <android.support.design.widget.TextInputLayout-->
+<!--                    android:id="@+id/codeContainer"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight=".22"-->
+<!--                    app:errorTextAppearance="@style/error_appearance">-->
+
+<!--                    <EditText-->
+
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:hint="Code"-->
+<!--                        android:imeOptions="actionNext"-->
+<!--                        android:inputType="phone"-->
+<!--                        android:maxLines="1"-->
+<!--                        android:singleLine="true" />-->
+
+<!--                </android.support.design.widget.TextInputLayout>-->
+
+<!--                <android.support.design.widget.TextInputLayout-->
+<!--                    android:id="@+id/phoneContainer"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight=".78"-->
+<!--                    app:errorTextAppearance="@style/error_appearance">-->
+
+<!--                    <EditText-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:hint="Phone Number *"-->
+<!--                        android:imeOptions="actionNext"-->
+<!--                        android:inputType="phone"-->
+<!--                        android:maxLines="1"-->
+<!--                        android:singleLine="true" />-->
+
+<!--                </android.support.design.widget.TextInputLayout>-->
+
+<!--            </LinearLayout>-->
+
+<!--            <android.support.design.widget.TextInputLayout-->
+<!--                android:id="@+id/fleetSizeContainer"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:errorTextAppearance="@style/error_appearance">-->
+
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Fleet Size (Number of Vehicles) *"-->
+<!--                    android:imeOptions="actionNext"-->
+<!--                    android:inputType="number"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:singleLine="true" />-->
+
+<!--            </android.support.design.widget.TextInputLayout>-->
+
+<!--            <android.support.design.widget.TextInputLayout-->
+<!--                android:id="@+id/messageContainer"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:visibility="gone">-->
+
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/border_background"-->
+<!--                    android:gravity="top"-->
+<!--                    android:hint="Message"-->
+<!--                    android:imeOptions="actionDone"-->
+<!--                    android:inputType="textMultiLine"-->
+<!--                    android:maxLines="4"-->
+<!--                    android:minLines="4"-->
+<!--                    android:padding="8dp" />-->
+
+<!--            </android.support.design.widget.TextInputLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:weightSum="1">-->
+
+<!--                <android.support.design.widget.TextInputLayout-->
+<!--                    android:id="@+id/passContainer"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight=".5"-->
+<!--                    app:errorTextAppearance="@style/error_appearance">-->
+
+<!--                    <EditText-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:hint="Password "-->
+<!--                        android:imeOptions="actionNext"-->
+<!--                        android:inputType="textPassword"-->
+<!--                        android:maxLines="1"-->
+<!--                        android:singleLine="true" />-->
+
+<!--                </android.support.design.widget.TextInputLayout>-->
+
+<!--                <android.support.design.widget.TextInputLayout-->
+<!--                    android:id="@+id/rePassContainer"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight=".5"-->
+<!--                    app:errorTextAppearance="@style/error_appearance">-->
+
+<!--                    <EditText-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:hint="Retype Password "-->
+<!--                        android:imeOptions="actionDone"-->
+<!--                        android:inputType="textPassword"-->
+<!--                        android:maxLines="1"-->
+<!--                        android:singleLine="true" />-->
+
+<!--                </android.support.design.widget.TextInputLayout>-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <android.support.design.widget.TextInputLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight=".1">-->
+
+<!--                    <CheckBox-->
+<!--                        android:id="@+id/privacyAgreementCheckBox"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent" />-->
+
+<!--                </android.support.design.widget.TextInputLayout>-->
+
+<!--                <android.support.design.widget.TextInputLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight=".9">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/privacyAgreementText"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:textColor="@color/secondaryTextColor" />-->
+
+<!--                </android.support.design.widget.TextInputLayout>-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="right"-->
+<!--                android:layout_marginTop="@dimen/_20sdp"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <Button-->
+
+<!--                    android:id="@+id/cancel"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginRight="@dimen/_10sdp"-->
+<!--                    android:text="Cancel"-->
+<!--                    android:textColor="@color/primaryTextColor"-->
+<!--                    android:visibility="invisible" />-->
+
+<!--                <Button-->
+
+<!--                    android:id="@+id/send"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Sign up"-->
+<!--                    android:textAllCaps="false"-->
+<!--                    android:textColor="@color/primaryTextColor" />-->
+<!--            </LinearLayout>-->
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+<!--</LinearLayout>-->

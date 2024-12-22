@@ -1,0 +1,10 @@
+C:\Users\umerk\source\repos\PortForwarder\Location Tracking\bin\Debug\Location Tracking.exe.config
+C:\Users\umerk\source\repos\PortForwarder\Location Tracking\bin\Debug\Location Tracking.exe
+C:\Users\umerk\source\repos\PortForwarder\Location Tracking\bin\Debug\Location Tracking.pdb
+C:\Users\umerk\source\repos\PortForwarder\Location Tracking\obj\Debug\Location Tracking.csprojAssemblyReference.cache
+C:\Users\umerk\source\repos\PortForwarder\Location Tracking\obj\Debug\Location_Tracking.Form1.resources
+C:\Users\umerk\source\repos\PortForwarder\Location Tracking\obj\Debug\Location_Tracking.Properties.Resources.resources
+C:\Users\umerk\source\repos\PortForwarder\Location Tracking\obj\Debug\Location Tracking.csproj.GenerateResource.cache
+C:\Users\umerk\source\repos\PortForwarder\Location Tracking\obj\Debug\Location Tracking.csproj.CoreCompileInputs.cache
+C:\Users\umerk\source\repos\PortForwarder\Location Tracking\obj\Debug\Location Tracking.exe
+C:\Users\umerk\source\repos\PortForwarder\Location Tracking\obj\Debug\Location Tracking.pdb

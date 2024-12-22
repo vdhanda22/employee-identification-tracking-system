@@ -1,0 +1,43 @@
+﻿<div class="row clearfix" ng-controller="app.views.trackings.index as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header">
+                <h2>
+                    @L("Trackings")
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li>
+                        <select class="form-control" type="text" name="currency"
+                                ng-class="{'edited':vm.tracking.mapId}"
+                                ng-options="map.id as map.name for map in vm.maps"
+                                ng-change="vm.mapChanged()"
+                                ng-model="vm.tracking.mapId">
+                            <option value="">Select Map</option>
+                        </select>
+                    </li>
+                    <i class="fa fa-spin fa-spinner" ng-if="vm.isTableLoading"></i>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);" class="waves-effect waves-block()" ng-click="vm.refresh();"><i class="material-icons">refresh</i> @L("Refresh")</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body table-responsive">
+                <div ng-if="vm.maps.length==0||!vm.tracking.mapId" class="text-center">
+                    <div class="jumbotron">
+                        <span>Please Add some maps first.</span>
+                    </div>
+                </div>
+                <div  id="svgmapcontainer" class="svgmapcontainer" style="width: 700px; height: 450px;"></div>
+                @*<button type="button" data-toggle="modal" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" ng-click="vm.openUserCreationModal()">
+                        <i class="material-icons">add</i>
+                    </button>*@
+            </div>
+
+        </div>
+    </div>
+</div>

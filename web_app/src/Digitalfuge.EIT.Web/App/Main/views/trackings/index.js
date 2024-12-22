@@ -1,0 +1,410 @@
+﻿(function () {
+    angular.module('app').controller('app.views.trackings.index', [
+        '$scope','$interval', 'abp.services.app.map', 'abp.services.app.room', 'abp.services.app.tag', 'abp.services.app.location',
+        function ($scope, $interval, mapService, roomService, tagService, locationService) {
+            var vm = this;
+            vm.maps = [];
+            vm.rooms = [];
+            vm.tags = [];
+
+            var map_background_width = "700";
+            var map_background_height = "450";
+            var ajax_update_url;
+            var upto_id;
+            var tagpos_queue = {};
+            var ajax_request_timeout;
+            var animation_speed = 1000;
+            var livemap_ajax_refresh_sec = 1
+            var ajaxdata = [];
+            function loadlivemap(svg) {
+
+                //Save scg into the global scope for use in other functions
+                window.svg = svg;
+
+                //http://keith-wood.name/svg.html
+
+                //Load background
+                svg.image(0, 0, map_background_width, map_background_height, '/Temp/Maps/' + vm.selectedMap.fileName);
+
+                //Load readers
+                var g = svg.group({ opacity: 0 });
+
+                //Init group for path lines
+                //var svg_lines = svg.group();
+
+                //Go through all readers and add them to the map
+                for (var i in vm.rooms) {
+                    var reader = svg.circle(g, vm.rooms[i].positionX, vm.rooms[i].positionY, 0, { fill: '#ffb85c', stroke: '#000000', 'stroke-width': 3 });
+                    $(reader).animate({ r: 11 }, 500);
+
+                }
+
+                $(g).animate({ opacity: 0.9 }, 500);
+
+
+                //Init URL for updates
+                //ajax_update_url = baseurl;
+
+                //Tags group
+                var svg_tags_g = svg.group();
+
+                //Go through all tags and add them to the url, add them to the map, init the tag queue
+                for (var i in vm.tags) {
+
+                    //ajax_update_url += "&tagid[]=" + tags[i]["id"];
+
+                    var tag_id = vm.tags[i]["id"];
+                    tagpos_queue[tag_id] = [];
+
+                    //Add tag to the map hidden
+                    var tag = svg.circle(svg_tags_g, 0, 0, 0, { fill: vm.tags[i]["color"], stroke: '#000000', 'stroke-width': 2, 'opacity': 0 });
+
+                    vm.tags[i]["svg"] = tag;
+                    vm.tags[i]["new"] = true;
+
+                    vm.tags[i]["lastpos"] = [];
+
+                }
+
+                //alert(ajax_update_url);
+                //index.php?p=livemap_ajax&map_id=9&tagid[]=2&tagid[]=3
+
+               
+                //Set queue processing to occur
+                $interval(ParsingProcess, 2000);
+
+            }
+            function ParsingProcess() {
+
+                //Parse initial ajax data (tag positions)
+                ajax_request();
+                parse_ajaxdata();
+
+                //Hadle initial tag queue
+                handle_tagpos_queue();
+
+                //Init ajax request to poll for new data at regular intervals
+                //ajax_request_init();
+            }
+
+            //Init ajax request
+           
+
+            //ajax request handle
+            function ajax_request() {
+
+                //var geturl = ajax_update_url + "&t=pos&upto_id=" + upto_id + "&nocache=" + new Date().getTime();
+                //var loader = new net.ContentLoader(geturl, ajax_request_process);
+                locationService.getPositions(vm.selectedMap.id, upto_id, true).then(function (result) {
+                    ajaxdata = result.data;
+                    console.log(result.data);
+                });
+                //ajax_request_init();
+            }
+
+            //Handle ajax responce
+            function ajax_request_process() {
+
+                eval("ajaxdata = " + this.req.responseText);
+
+                //Parse ajax data
+                parse_ajaxdata();
+
+                //Hadle tag queue
+                //handle_tagpos_queue();
+
+                //Trigger another request to happen shortly
+                ajax_request_init();
+
+            }
+
+            //Parse ajaxdata
+            function parse_ajaxdata() {             
+                //Go through all tags
+                /*                for (var i in vm.tags) {*/
+                    //var tag_id = vm.tags[i]["id"];
+                    for (var tag in ajaxdata) {
+                        for (var pos in ajaxdata[tag].positons) {
+                            tagpos_queue[ajaxdata[tag].tagId].push(ajaxdata[tag].positons[pos]);
+
+                            //If have an upto_id greater than the previously seen value
+                            if ((upto_id == undefined) || (ajaxdata[tag].positons[pos].id > upto_id)) {
+
+                                //Update the last id seen (ready for the next request)
+                                upto_id = ajaxdata[tag].positons[pos].id;
+
+                            }
+
+                        }
+                    }                   
+
+                    //Go through all position for tag
+
+
+/*                }*/
+
+                //alert(dump(tagpos_queue));
+                //alert(upto_id);
+
+            }
+
+            //Handle tag position action queue
+            function handle_tagpos_queue() {
+                //alert(dump(tagpos_queue));
+
+                //Go through all tags
+                for (var tag in vm.tags) {
+
+                    var tag_id = vm.tags[tag]["id"];
+
+                    //Go through all position actions for tag
+                    var processed_pos = 0;
+                    for (var pos in tagpos_queue[tag_id]) {
+
+                        //Work out declustered position
+
+                        var decluster_pos = cluster_tags(tagpos_queue[tag_id][pos].xpos, tagpos_queue[tag_id][pos].ypos);
+
+                        //If tag is hidden
+                        if (vm.tags[tag]["new"] == true) {
+
+                            //Set as now not new
+                            vm.tags[tag]["new"] = false;
+
+                            //Move to initial position
+                            $(vm.tags[tag]["svg"]).animate({ 'cx': decluster_pos["xpos"], 'cy': decluster_pos["ypos"] }, 0);
+
+                            //Show in initial position
+                            $(vm.tags[tag]["svg"]).animate({ 'opacity': 0.7, 'r': 6 }, animation_speed);
+
+                        } else {
+
+                            //Init line from old position to new position
+                            //line(parent, x1, y1, x2, y2, settings)
+                            //var pathline = svg.line(null, tags[tag]["lastpos"][0], tags[tag]["lastpos"][1], decluster_pos["xpos"], decluster_pos["ypos"], {strokeWidth: 1, stroke: 'green'});
+                            var pathline = svg.line(null, vm.tags[tag]["lastpos"]["xpos"], vm.tags[tag]["lastpos"]["ypos"], vm.tags[tag]["lastpos"]["xpos"], vm.tags[tag]["lastpos"]["ypos"], { strokeWidth: 5, stroke: '#ffffff' });
+
+                            //Animate line to new position
+                            $(pathline).animate({ x2: decluster_pos["xpos"], y2: decluster_pos["ypos"], stroke: vm.tags[tag]["colour"], strokewidth: 2 }, animation_speed);
+
+                            //Animate marker to new position
+                            $(vm.tags[tag]["svg"]).animate({ 'cx': decluster_pos["xpos"], 'cy': decluster_pos["ypos"] }, animation_speed);
+
+                        }
+
+                        //Save position
+                        vm.tags[tag]["lastpos"] = {
+                            "xpos": decluster_pos["xpos"],
+                            "ypos": decluster_pos["ypos"]
+                        };
+
+                        processed_pos++;
+
+                        //Remove this (first item) from the queue, it has been processed
+                        //tagpos_queue[tag_id].shift()
+
+                        //Processed an action, stop here
+                        break;
+
+                    }
+
+                    //Clear all processed positions
+                    if (processed_pos > 0) {
+
+                        for (var i = 0; i < processed_pos; i++) {
+                            tagpos_queue[tag_id].shift()
+                        }
+
+                    }
+
+                }
+
+            }
+
+            //Handle clustering of tags so they do not overlap / are not placed on top of each other or readers
+            function cluster_tags(xpos, ypos) {
+                var clust_pos_pad = 15;
+                var map_edge_pad = 20;
+                var max_dist_away = 70;
+
+                //var debugdata = "";
+
+                //svg.circle(xpos, ypos, 6, {fill: '#000000', stroke: '#000000', 'stroke-width': 2, 'opacity': 50});
+
+                var found_position = false;
+
+                var decluster_pos = {
+                    "xpos": "",
+                    "ypos": ""
+                };
+
+                //Offset X
+                for (var pos_offset_x = clust_pos_pad; pos_offset_x < max_dist_away; pos_offset_x += clust_pos_pad) {
+
+                    //Offset Y
+                    for (var pos_offset_y = clust_pos_pad; pos_offset_y < max_dist_away; pos_offset_y += clust_pos_pad) {
+
+                        //Offset Left/Right
+                        for (var pos_offset_lr = 0; pos_offset_lr < 2; pos_offset_lr++) {
+
+                            //Offset Top/Bottom
+                            for (var pos_offset_tb = 0; pos_offset_tb < 2; pos_offset_tb++) {
+
+                                var position_usable = true;
+
+                                //debugdata += pos_offset_tb + "\n";
+
+                                //Work out if offset should be left/right of position
+                                if (pos_offset_lr == 1) { //Right
+
+                                    pos_cluster_x = xpos + pos_offset_x;
+
+                                    //Check not off the right side of the map (with padding)
+                                    if (pos_cluster_x > (map_background_width - map_edge_pad)) {
+                                        position_usable = false;
+                                    }
+
+                                } else { //Left
+
+                                    pos_cluster_x = xpos - pos_offset_x;
+
+                                    //Check not off the left side of the map (with padding)
+                                    if (pos_cluster_x < map_edge_pad) {
+                                        position_usable = false;
+                                    }
+
+                                }
+
+                                //Work out if offset should be top/bottom of position
+                                if (pos_offset_tb == 1) { //Bottom
+
+                                    pos_cluster_y = ypos + pos_offset_y;
+
+                                    //Check not over the max height of the map (with padding)
+                                    if (pos_cluster_y > (map_background_height - map_edge_pad)) {
+                                        position_usable = false;
+                                    }
+
+                                } else { //Top
+
+                                    pos_cluster_y = ypos - pos_offset_y;
+
+                                    //Check not under the map (with padding)
+                                    if (pos_cluster_y < map_edge_pad) {
+                                        position_usable = false;
+                                    }
+
+                                }
+
+                                //Go through all tags checking none area near the possible proposed position
+                                for (var tag in vm.tags) {
+
+                                    //If tag is on the map
+                                    if (vm.tags[tag]["lastpos"]["xpos"] != "") {
+
+                                        //Check position is not close to an existing tag
+                                        if (
+                                            (
+                                                (pos_cluster_x > (vm.tags[tag]["lastpos"]["xpos"] - clust_pos_pad)) && (pos_cluster_x < (vm.tags[tag]["lastpos"]["xpos"] + clust_pos_pad)) //x axis
+                                            )
+                                            &&
+                                            (
+                                                (pos_cluster_y > (vm.tags[tag]["lastpos"]["ypos"] - clust_pos_pad)) && (pos_cluster_y < (vm.tags[tag]["lastpos"]["ypos"] + clust_pos_pad)) //y axis
+                                            )
+                                        ) {
+
+                                            position_usable = false;
+
+                                        }
+
+                                    }
+
+                                }
+
+                                //If position has not been found already and is usable
+                                if ((found_position == false) && (position_usable == true)) {
+
+                                    //svg.circle(pos_cluster_x, pos_cluster_y, 6, {fill: '#ffff00', stroke: '#000000', 'stroke-width': 2, 'opacity': 50});
+
+                                    found_position = true;
+
+                                    decluster_pos = {
+                                        "xpos": pos_cluster_x,
+                                        "ypos": pos_cluster_y
+                                    };
+
+                                } else {
+                                    //Possible position
+                                    //svg.circle(pos_cluster_x, pos_cluster_y, 6, {fill: 'none', stroke: '#000000', 'stroke-width': 2, 'opacity': 50});
+                                }
+
+                                if (found_position == true) {
+                                    break;
+                                }
+
+                            }
+
+                            if (found_position == true) {
+                                break;
+                            }
+
+                        }
+
+                        if (found_position == true) {
+                            break;
+                        }
+
+                    }
+
+                    if (found_position == true) {
+                        break;
+                    }
+
+                }
+
+                //alert(debugdata);
+
+                return decluster_pos;
+
+            }
+            vm.mapChanged = function () {
+                angular.element('#svgmapcontainer').html("");
+                if (vm.tracking.mapId) {
+                    vm.selectedMap = vm.maps.filter(i => i.id == vm.tracking.mapId)[0];
+                    locationService.getPositions(vm.selectedMap.id, 0, false).then(function (result) {
+                        debugger;
+                        ajaxdata = result.data;
+                        angular.element('#svgmapcontainer').removeClass("hasSVG");
+                        angular.element('#svgmapcontainer').svg({ onLoad: loadlivemap });
+                    });                   
+                    
+
+                }
+            }
+            function getMaps() {
+                mapService.getAll({}).then(function (result) {
+                    vm.maps = result.data.items;
+                });
+            }
+            function getRooms() {
+                roomService.getAll({}).then(function (result) {
+                    vm.rooms = result.data.items;
+                });
+            }
+            function getTags() {
+                tagService.getAll({}).then(function (result) {
+                    vm.tags = result.data.items;
+                });
+            }
+
+            function init() {
+                getMaps();
+                getRooms();
+                getTags();
+
+            }
+            init();
+
+        }
+    ]);
+})();
